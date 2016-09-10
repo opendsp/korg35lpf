@@ -1,0 +1,23 @@
+{
+  "name": "korg35lpf",
+  "version": "1.0.0",
+  "description": "korg35 low pass filter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opendsp/korg35lpf.git"
+  },
+  "author": "stagas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opendsp/korg35lpf/issues"
+  },
+  "homepage": "https://github.com/opendsp/korg35lpf#readme",
+  "dependencies": {
+    "filter": "github:opendsp/filter#2.0.0",
+    "prewarp": "github:opendsp/prewarp#1.0.0"
+  }
+}

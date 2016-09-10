@@ -9,8 +9,8 @@
  * @license mit
  */
 
-import Filter from 'opendsp/filter/1.0.0';
-import prewarp from 'opendsp/prewarp';
+import Filter from 'filter';
+import prewarp from 'prewarp';
 
 export default Korg35LPF;
 
@@ -36,14 +36,14 @@ Korg35LPF.prototype.update = function(){
   var g = prewarp(this.fc);
   var G = g / (1 + g);
   var k = this.k;
-  
+
   this.lpf1.a = G;
   this.lpf2.a = G;
   this.hpf1.a = G;
-  
+
   this.lpf2.b = (k-k*G)/(1+g);
   this.hpf1.b = -1/(1 + g);
-  
+
   this.a = 1/(1-k*G+k*G*G);
 };
 
@@ -78,7 +78,7 @@ Korg35LPF.prototype.run = function(xn){
   this.hpf1.run(y);
 
   if (this.k > 0) y *= 1/this.k;
-  
+
   return y;
 };
 
